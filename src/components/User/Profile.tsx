@@ -3,10 +3,12 @@ import axios from 'axios';
 import { Table, Button, message, Modal, Form, Input } from 'antd';
 
 const Profile: React.FC = () => {
-    const [userData, setUserData] = useState<any>(null); // State to store user data
+    const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
-    const [isModalVisible, setIsModalVisible] = useState<boolean>(false); // For showing the modal
-    const [form] = Form.useForm(); // Ant Design form instance for handling form input
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+    const [changePasswordModal, setChangePasswordModal] = useState<boolean>(false);  // For change password modal
+    const [form] = Form.useForm();
+    const [passwordForm] = Form.useForm();  // Form for password change
 
     useEffect(() => {
         const fetchUserProfile = async () => {
@@ -35,7 +37,6 @@ const Profile: React.FC = () => {
         fetchUserProfile();
     }, []);
 
-    // Prepare the data for the table
     const data = userData
         ? [
             { key: '1', attribute: 'First Name', value: userData.firstName },
@@ -94,6 +95,45 @@ const Profile: React.FC = () => {
         setIsModalVisible(false);
     };
 
+    const handleChangePassword = () => {
+        setChangePasswordModal(true);
+    };
+
+    const handlePasswordChange = async () => {
+        const { currentPassword, newPassword, confirmPassword } = passwordForm.getFieldsValue();
+
+        if (newPassword !== confirmPassword) {
+            message.error('New password and confirm password do not match');
+            return;
+        }
+
+        try {
+            const token = localStorage.getItem('token');
+
+            const response = await axios.patch(
+                'http://localhost:8000/api/auth/resetPassword',
+                { currentPassword, newPassword },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            if (response.status === 200) {
+                message.success('Password changed successfully');
+                setChangePasswordModal(false);
+            }
+
+        } catch (error: any) {
+            message.error(error.response?.data?.message || 'Failed to change password');
+        }
+    };
+
+    const handleCancelPasswordChange = () => {
+        setChangePasswordModal(false);
+    };
+
     return (
         <div className="user">
             <div className="left-profile">
@@ -114,7 +154,7 @@ const Profile: React.FC = () => {
 
             <div className="right-profile">
                 <Button size='small' onClick={showModal}>Edit Profile</Button>
-                <Button size='small'>Change Password</Button>
+                <Button size='small' onClick={handleChangePassword}>Change Password</Button>
             </div>
 
             <Modal
@@ -166,8 +206,42 @@ const Profile: React.FC = () => {
                     >
                         <Input />
                     </Form.Item>
-                    <Form.Item label="Role" name="role">
-                        <Input />
+                </Form>
+            </Modal>
+
+            <Modal
+                title="Change Password"
+                visible={changePasswordModal}
+                onOk={handlePasswordChange}
+                onCancel={handleCancelPasswordChange}
+                okText="Change Password"
+                cancelText="Cancel"
+            >
+                <Form
+                    form={passwordForm}
+                    layout="vertical"
+                    name="changePasswordForm"
+                >
+                    <Form.Item
+                        label="Current Password"
+                        name="currentPassword"
+                        rules={[{ required: true, message: 'Current password is required' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+                    <Form.Item
+                        label="New Password"
+                        name="newPassword"
+                        rules={[{ required: true, message: 'New password is required' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+                    <Form.Item
+                        label="Confirm New Password"
+                        name="confirmPassword"
+                        rules={[{ required: true, message: 'Please confirm your new password' }]}
+                    >
+                        <Input.Password />
                     </Form.Item>
                 </Form>
             </Modal>

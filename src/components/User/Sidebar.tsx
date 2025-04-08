@@ -8,7 +8,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
-    const menuItems = ["Dashboard", "Manage Task", "Profile"];
+    const menuItems = ["Dashboard", "Manage Task", "Profile", "Logout"];
     const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
     return (

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Modal } from 'antd';
 import Sidebar from "../components/Admin/Sidebar";
 import Dashboard from "../components/Admin/Dashboard";
 import CreateUser from "../components/Admin/CreateUser";
@@ -12,6 +13,22 @@ import '../App.scss'
 
 const AdminDashboard: React.FC = () => {
     const [activeTab, setActiveTab] = useState("Dashboard");
+
+    const handleLogout = () => {
+        Modal.confirm({
+            title: 'Are you sure you want to logout?',
+            content: 'You will be logged out and your session will be terminated.',
+            okText: 'Yes',
+            cancelText: 'No',
+            onOk: () => {
+                localStorage.clear();
+                window.location.reload();
+            },
+            onCancel: () => {
+                window.location.reload();
+            }
+        });
+    };
 
     const renderComponent = () => {
         switch (activeTab) {
@@ -29,6 +46,9 @@ const AdminDashboard: React.FC = () => {
                 return <AdminUser />;
             case "Regular User":
                 return <RegularUser />;
+            case "Logout":
+                handleLogout();
+                return null;
             default:
                 return <Dashboard />;
         }
