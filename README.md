@@ -43,7 +43,7 @@ This project has the following key dependencies and devDependencies:
    git clone https://github.com/DimanthaWalallawita/task-management
 
 
-### Option 02
+#### Option 02
 1. Visit to this below link:
         https://github.com/DimanthaWalallawita/task-management
 
