@@ -109,6 +109,7 @@ const CreateTask: React.FC = () => {
                             value={formData.taskName}
                             onChange={handleChange}
                             placeholder="Enter task name"
+                            required
                         />
                         <Input.TextArea
                             name="description"
@@ -117,6 +118,7 @@ const CreateTask: React.FC = () => {
                             style={{ borderRadius: "15px" }}
                             rows={4}
                             placeholder="Enter task description"
+                            maxLength={1250}
                         />
                         <div
                             style={{
