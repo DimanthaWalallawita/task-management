@@ -51,12 +51,12 @@ This project has the following key dependencies and devDependencies:
 3. Click on clone button.
 
 ## Run
-1. Navigate to the project directory and install the necessary dependencies:
-        cd task-management
-        npm install
+1. Navigate to the project directory and install the necessary dependencies:<br.>
+        👉cd task-management<br.>
+        👉npm install
 
-2. Once the dependencies are installed, start the development server:
-        npm start
+2. Once the dependencies are installed, start the development server:<br.>
+        👉npm start
 
 ## other
 Running Port : 3008
