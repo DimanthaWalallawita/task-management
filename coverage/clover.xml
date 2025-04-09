@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1744199999085" clover="3.2.0">
+  <project timestamp="1744199999086" name="All files">
+    <metrics statements="39" coveredstatements="27" conditionals="8" coveredconditionals="5" methods="14" coveredmethods="8" elements="61" coveredelements="40" complexity="0" loc="39" ncloc="39" packages="1" files="1" classes="1"/>
+    <file name="CreateTask.tsx" path="C:\Users\USER\Desktop\Test\task-management\src\components\Admin\TaskManagement\CreateTask.tsx">
+      <metrics statements="39" coveredstatements="27" conditionals="8" coveredconditionals="5" methods="14" coveredmethods="8"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="33" count="6" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="37" count="1" type="cond" truecount="3" falsecount="3"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="58" count="0" type="stmt"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="68" count="0" type="stmt"/>
+      <line num="69" count="0" type="stmt"/>
+      <line num="73" count="5" type="stmt"/>
+      <line num="76" count="2" type="stmt"/>
+      <line num="77" count="2" type="stmt"/>
+      <line num="83" count="5" type="stmt"/>
+      <line num="84" count="0" type="stmt"/>
+      <line num="90" count="5" type="stmt"/>
+      <line num="91" count="0" type="stmt"/>
+      <line num="97" count="5" type="stmt"/>
+      <line num="137" count="0" type="stmt"/>
+      <line num="147" count="0" type="stmt"/>
+      <line num="157" count="1" type="stmt"/>
+      <line num="159" count="8" type="stmt"/>
+      <line num="199" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
