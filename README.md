@@ -51,11 +51,11 @@ This project has the following key dependencies and devDependencies:
 3. Click on clone button.
 
 ## Run
-1. Navigate to the project directory and install the necessary dependencies:<br.>
-        👉cd task-management<br.>
+1. Navigate to the project directory and install the necessary dependencies:<br/>
+        👉cd task-management<br/>
         👉npm install
 
-2. Once the dependencies are installed, start the development server:<br.>
+2. Once the dependencies are installed, start the development server:<br/>
         👉npm start
 
 ## other
