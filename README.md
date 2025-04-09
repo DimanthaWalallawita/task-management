@@ -9,8 +9,8 @@ This is the Task Management module in the task management system. It provides tw
 
 - [Installation](#installation)
 - [Clone the Repository](#clone-the-repository)
-- [Install Dependencies & Start the Server](#install-dependencies--start-the-server)
-- [Other Details](#other-details)
+- [Install Dependencies & Start the Server](#run)
+- [Other Details](#other)
 
 ## Installation
 
