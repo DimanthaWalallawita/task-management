@@ -93,7 +93,7 @@ const ManageUsers: React.FC = () => {
                 mobileNumber: values.mobileNumber,
                 address: values.address,
                 role: values.role,
-                isEnabled: values.isEnabled,  // Toggle or send isEnabled as needed
+                isEnabled: values.isEnabled,
             };
             const response = await axios.patch(`http://localhost:8000/api/user/update/${currentUser._id}`, updatedUser);
             if (response.status === 200) {
