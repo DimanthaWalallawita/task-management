@@ -350,3 +350,91 @@
     padding-bottom: 20px;
   }
 }
+
+// ============================================================================ Admin Dashboard
+.admin-dashboard{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-top{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    margin-top: 55px;
+  }
+}
+
+.admin-bottom{
+  height: 70%;
+  width: 100%;
+}
+
+.admins-users{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #0a1a3d;
+  height: 100%;
+  flex: 1;
+  border-radius: 10px;
+
+  @media (max-width: 991px) {
+    width: 100%;
+    padding: 15px 0 15px 0;
+  }
+}
+
+.admins-pending{
+  background-color: #0a1a3d;
+  height: 100%;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.admins-complete{
+  background-color: #0a1a3d;
+  height: 100%;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.admin-user-left{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-user-right{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  line-height: 25px;
+
+  h1{
+    font-size: 23px;
+    color: rgb(160, 160, 160);
+    font-weight: 100;
+  }
+
+  h2{
+    font-size: 18px;
+    color: white;
+    font-weight: 100;
+  }
+}
