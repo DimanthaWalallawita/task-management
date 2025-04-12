@@ -379,7 +379,11 @@
 
 .admin-bottom{
   height: 70%;
+  margin-top: 15px;
   width: 100%;
+  @media (max-width: 991px) {
+    margin-top: 45px;
+  }
 }
 
 .admins-users{
@@ -437,4 +441,38 @@
     color: white;
     font-weight: 100;
   }
+}
+
+.recent-task{
+  background-color: #e2e2e2;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  @media (max-width: 991px) {
+    margin-top: 15px;
+  }
+}
+
+.recent-task-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 3px;
+
+  h3{
+    font-size: small;
+  }
+}
+
+.recent-task-bottom{
+  h5{
+    font-weight: 200;
+  }
+}
+
+.read-more{
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
