@@ -15,8 +15,14 @@ const ManageUsers: React.FC = () => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get("http://localhost:8000/api/user/getUsers");
-                setUsers(response.data);
-                setLoading(false);
+
+                if(!response.data){
+                    message.error("Something Went Wrong");
+                }else{
+                    setUsers(response.data);
+                    setLoading(false);
+                }
+                
             } catch (error) {
                 console.error("Error fetching users:", error);
                 message.error("Failed to fetch users");

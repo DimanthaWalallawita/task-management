@@ -5,7 +5,7 @@
             "dom",
             "esnext"
         ],
-        "jsx": "react-jsx", // For React 17 and later
+        "jsx": "react-jsx",
         "moduleResolution": "node",
         "module": "esnext",
         "esModuleInterop": true,
